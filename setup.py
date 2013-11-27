@@ -9,6 +9,6 @@ setup(name='python-zenoss',
     author_email='seth@migrantgeek.com',
     url='https://github.com/migrantgeek/python-zenoss',
     py_modules=['zenossapi',],
-    scripts=['scripts/zenoss_add_device.py',]
+    scripts=['scripts/zenoss_add_device.py',],
     ext_modules = []
 )
