@@ -3,6 +3,7 @@
 import argparse
 import os
 import sys
+import time
 import zenossapi
 
 def add_device(host, username, password, device, device_class, pem=None, maintenance=False):
@@ -14,6 +15,8 @@ def add_device(host, username, password, device, device_class, pem=None, mainten
         z.connect(host, username, password, pem)
         # Add device
         z.add_device(device, device_class)
+        # Wait while zenoss gets the device added
+        time.sleep(5)
         if maintenance:
             z.set_maintenance(device)
         # Reset IP just in case
